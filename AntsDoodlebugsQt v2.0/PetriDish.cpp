@@ -3,6 +3,11 @@
 #include <QApplication>
 #include <QDesktopWidget>
 
+//Additional
+#include <QPixmap>
+#include <QImage>
+#include <QGraphicsPixmapItem>
+
 #include "PetriDish.h"
 #include "displaystats.h"
 
@@ -24,7 +29,8 @@ PetriDish::PetriDish(QWidget * parent)
 
     // create a scene
     scene = new QGraphicsScene();
-    scene -> setSceneRect(0, 0, view_width, view_height);
+    //scene -> setSceneRect(0, 0, view_width, view_height); Replace with Pixmap!
+    setBackgroundBrush(QBrush(QImage(":/images/sandbkgd.jpg"))); //make sure you create and add images in the resource file
     setScene(scene);
 
     // set QGraphicsView parameters
